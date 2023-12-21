@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorizontalStackLayout_19513.MainPage">
+
+    <!-- 
+    Nevative spacing values crashing the debugger. They are allowed per documentation:
+    https://learn.microsoft.com/en-us/dotnet/maui/user-interface/layouts/horizontalstacklayout?view=net-maui-8.0
+    -->
+    <StackLayout>
+        <HorizontalStackLayout
+		x:Name="humanCardLayout"             
+		HorizontalOptions="CenterAndExpand"             
+		Spacing="-5">
+        <!-- Replace the negative number with a positive number and the project loads. -->
+            
+            <Image                 
+		x:Name="Card1"                  
+		Source="dotnet_bot.png"/>
+
+        <!-- Remove the second image control and the project will run WITH the negative value.
+            Negative spacing values are allowed, unless there is more than one control. -->
+            <Image                 
+		x:Name="Card2"                  
+		Source="dotnet_bot.png"/>
+
+        </HorizontalStackLayout>
+    </StackLayout>
+
+</ContentPage>
